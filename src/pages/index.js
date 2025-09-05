@@ -165,34 +165,34 @@ export default function Home() {
         <main className="container mx-auto px-6 py-12">
           {/* Hero Section */}
           <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-modern rounded-3xl shadow-modern mb-6">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-epl rounded-3xl shadow-epl mb-6">
               <i className="fas fa-tshirt text-3xl text-white"></i>
             </div>
-            <h1 className="text-4xl md:text-6xl font-heading font-bold text-brand-secondary mb-4">
-              Koleksi Jersey <span className="text-gradient">Premium</span>
+            <h1 className="text-4xl md:text-6xl font-epl-heading font-bold text-brand-text mb-4 tracking-tighter">
+              Premier Jersey <span className="text-gradient-epl">Collection</span>
             </h1>
-            <p className="text-xl text-brand-muted font-display max-w-2xl mx-auto leading-relaxed">
-              Temukan jersey impian Anda dari koleksi terlengkap dan terpercaya. 
-              Kualitas premium, harga terjangkau, pengiriman ke seluruh Indonesia.
+            <p className="text-xl text-brand-muted font-epl-body max-w-2xl mx-auto leading-relaxed">
+              Discover your dream jersey from our premium and exclusive collection. 
+              Top quality, affordable prices, delivery across Indonesia.
             </p>
             
-            {/* Stats */}
+            {/* Stats - EPL Style */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-12">
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold font-heading text-brand-secondary mb-2">500+</div>
-                <div className="text-brand-muted font-display">Model Jersey</div>
+                <div className="text-3xl md:text-4xl font-epl-heading font-bold text-brand-purple mb-2 font-sport-numbers">500+</div>
+                <div className="text-brand-muted font-epl-body">Jersey Models</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold font-heading text-brand-secondary mb-2">50+</div>
-                <div className="text-brand-muted font-display">Klub Ternama</div>
+                <div className="text-3xl md:text-4xl font-epl-heading font-bold text-brand-purple mb-2 font-sport-numbers">50+</div>
+                <div className="text-brand-muted font-epl-body">Top Clubs</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold font-heading text-brand-secondary mb-2">10K+</div>
-                <div className="text-brand-muted font-display">Customer Happy</div>
+                <div className="text-3xl md:text-4xl font-epl-heading font-bold text-brand-purple mb-2 font-sport-numbers">10K+</div>
+                <div className="text-brand-muted font-epl-body">Happy Customers</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold font-heading text-brand-secondary mb-2">24H</div>
-                <div className="text-brand-muted font-display">Fast Delivery</div>
+                <div className="text-3xl md:text-4xl font-epl-heading font-bold text-brand-purple mb-2 font-sport-numbers">24H</div>
+                <div className="text-brand-muted font-epl-body">Express Delivery</div>
               </div>
             </div>
           </div>

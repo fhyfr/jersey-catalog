@@ -18,14 +18,14 @@ export default function JerseyCard({ jersey }) {
   };
 
   const handleWhatsAppClick = () => {
-    const message = `Halo! Saya tertarik dengan jersey ${nama_jersey} - ${klub}. Apakah masih tersedia?`;
+    const message = `Hello! I'm interested in ${nama_jersey} - ${klub}. Is it still available?`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${whatsapp_number}?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank');
   };
 
   return (
-    <div className="group bg-white rounded-3xl shadow-modern border border-gray-100 overflow-hidden transition-all duration-500 hover:shadow-hover hover:-translate-y-2">
+    <div className="group card-epl overflow-hidden transition-all duration-500 hover:shadow-epl-strong hover:-translate-y-3">
       {/* Image Container */}
       <div className="relative h-72 bg-gradient-light overflow-hidden">
         {link_gambar ? (
@@ -39,113 +39,116 @@ export default function JerseyCard({ jersey }) {
         ) : (
           <div className="h-full flex items-center justify-center bg-gradient-light">
             <div className="text-center">
-              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-modern">
-                <i className="fas fa-tshirt text-3xl text-brand-muted"></i>
+              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-epl">
+                <i className="fas fa-tshirt text-3xl text-brand-purple"></i>
               </div>
-              <p className="text-brand-muted text-sm font-display">Gambar belum tersedia</p>
+              <p className="text-brand-muted text-sm font-epl-body">Image not available</p>
             </div>
           </div>
         )}
         
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        {/* EPL-style Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-purple/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         
-        {/* Badge */}
+        {/* Premium Badge - EPL Style */}
         <div className="absolute top-4 left-4">
-          <span className="bg-gradient-modern text-white px-3 py-1.5 rounded-full text-xs font-bold font-display shadow-modern backdrop-blur-sm">
-            <i className="fas fa-star mr-1"></i>
-            PREMIUM
+          <span className="bg-gradient-epl text-white px-3 py-1.5 rounded-full text-xs font-epl-heading font-bold shadow-epl backdrop-blur-sm border border-brand-cyan/30">
+            <i className="fas fa-crown mr-1"></i>
+            PREMIER
           </span>
         </div>
 
-        {/* Quick View Button */}
-        <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-          <button className="w-10 h-10 bg-white/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-modern hover:bg-white transition-colors duration-200">
-            <i className="fas fa-eye text-brand-text"></i>
+        {/* Quick Actions - EPL Theme */}
+        <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 space-y-2">
+          <button className="w-10 h-10 bg-brand-cyan/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-epl hover:bg-brand-cyan transition-colors duration-200">
+            <i className="fas fa-eye text-brand-purple"></i>
           </button>
-        </div>
-
-        {/* Wishlist Button */}
-        <div className="absolute top-16 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 animation-delay-200">
-          <button className="w-10 h-10 bg-white/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-modern hover:bg-white transition-colors duration-200">
-            <i className="far fa-heart text-brand-text hover:text-brand-primary"></i>
+          <button className="w-10 h-10 bg-brand-pink/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-epl hover:bg-brand-pink transition-colors duration-200 animation-delay-200">
+            <i className="far fa-heart text-white hover:text-white"></i>
           </button>
         </div>
       </div>
 
       {/* Content */}
       <div className="p-6">
-        {/* Club Badge */}
+        {/* Club Badge - EPL Style */}
         <div className="flex items-center space-x-2 mb-3">
-          <div className="w-6 h-6 bg-gradient-modern rounded-full flex items-center justify-center">
+          <div className="w-6 h-6 bg-gradient-epl rounded-full flex items-center justify-center">
             <i className="fas fa-shield-alt text-white text-xs"></i>
           </div>
-          <span className="text-brand-primary font-bold text-sm font-display uppercase tracking-wide">
+          <span className="text-brand-purple font-epl-heading font-bold text-sm uppercase tracking-wider">
             {klub}
           </span>
         </div>
         
-        {/* Jersey Name */}
-        <h3 className="text-xl font-bold font-display text-brand-text mb-3 line-clamp-2 group-hover:text-brand-primary transition-colors duration-300">
+        {/* Jersey Name - EPL Typography */}
+        <h3 className="text-xl font-epl-heading font-bold text-brand-text mb-3 line-clamp-2 group-hover:text-brand-purple transition-colors duration-300 tracking-tight">
           {nama_jersey}
         </h3>
 
-        {/* Features */}
+        {/* Features - EPL Style */}
         <div className="flex flex-wrap gap-2 mb-4">
-          <span className="bg-brand-light text-brand-text text-xs px-3 py-1 rounded-full font-display font-medium">
-            <i className="fas fa-check-circle text-brand-success mr-1"></i>
-            Original
+          <span className="bg-brand-light text-brand-purple text-xs px-3 py-1 rounded-full font-epl-body font-medium border border-brand-cyan/20">
+            <i className="fas fa-certificate text-brand-cyan mr-1"></i>
+            Authentic
           </span>
-          <span className="bg-brand-light text-brand-text text-xs px-3 py-1 rounded-full font-display font-medium">
-            <i className="fas fa-shipping-fast text-brand-primary mr-1"></i>
-            Fast Delivery
+          <span className="bg-brand-light text-brand-purple text-xs px-3 py-1 rounded-full font-epl-body font-medium border border-brand-pink/20">
+            <i className="fas fa-rocket text-brand-pink mr-1"></i>
+            Express Ship
           </span>
         </div>
 
-        {/* Price Section */}
+        {/* Price Section - EPL Style */}
         <div className="flex items-center justify-between mb-6">
           <div>
-            <div className="text-2xl font-bold font-display text-brand-secondary">
+            <div className="text-2xl font-epl-heading font-bold text-brand-purple sport-numbers">
               {formatPrice(parseInt(harga) || 0)}
             </div>
-            <div className="text-brand-muted text-sm line-through">
-              {formatPrice((parseInt(harga) || 0) * 1.3)}
+            <div className="text-brand-muted text-sm line-through font-epl-body">
+              {formatPrice((parseInt(harga) || 0) * 1.25)}
             </div>
           </div>
           <div className="text-right">
-            <div className="bg-gradient-modern text-white px-3 py-1 rounded-full text-xs font-bold">
-              <i className="fas fa-fire mr-1"></i>
-              HOT DEAL
+            <div className="bg-gradient-epl-accent text-white px-3 py-1 rounded-full text-xs font-epl-heading font-bold">
+              <i className="fas fa-bolt mr-1"></i>
+              LIMITED
             </div>
           </div>
         </div>
 
-        {/* WhatsApp Button */}
+        {/* WhatsApp Button - EPL Style */}
         <button
           onClick={handleWhatsAppClick}
-          className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold font-display py-4 px-6 rounded-2xl transition-all duration-300 flex items-center justify-center space-x-3 shadow-modern hover:shadow-hover transform hover:scale-105 active:scale-95"
+          className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-epl-heading font-bold py-4 px-6 rounded-2xl transition-all duration-300 flex items-center justify-center space-x-3 shadow-epl hover:shadow-epl-strong transform hover:scale-105 active:scale-95 group"
         >
-          <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
+          <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
             <i className="fab fa-whatsapp text-lg"></i>
           </div>
-          <span>Pesan via WhatsApp</span>
-          <i className="fas fa-arrow-right text-sm"></i>
+          <span className="tracking-tight">Order via WhatsApp</span>
+          <i className="fas fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
         </button>
 
-        {/* Additional Info */}
-        <div className="mt-4 pt-4 border-t border-gray-100">
-          <div className="flex items-center justify-between text-xs text-brand-muted">
+        {/* Additional Info - EPL Style */}
+        <div className="mt-4 pt-4 border-t border-brand-purple/10">
+          <div className="flex items-center justify-between text-xs text-brand-muted font-epl-body">
             <span className="flex items-center">
-              <i className="fas fa-clock mr-1"></i>
-              Ready Stock
+              <i className="fas fa-check-circle text-brand-cyan mr-1"></i>
+              In Stock
             </span>
             <span className="flex items-center">
-              <i className="fas fa-users mr-1"></i>
-              100+ sold
+              <i className="fas fa-users text-brand-pink mr-1"></i>
+              <span className="font-sport-numbers">150+</span> sold
+            </span>
+            <span className="flex items-center">
+              <i className="fas fa-star text-yellow-500 mr-1"></i>
+              <span className="font-sport-numbers">4.8</span>
             </span>
           </div>
         </div>
       </div>
+
+      {/* EPL Glow Effect on Hover */}
+      <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none epl-glow"></div>
     </div>
   );
 }
